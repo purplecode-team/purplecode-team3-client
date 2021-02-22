@@ -1,10 +1,12 @@
 module.exports = {
-  extends: ['airbnb-typescript'],
+  extends: [
+    'airbnb-typescript',
+    'prettier',
+  ],
   parserOptions: {
     project: './tsconfig.json',
   },
   rules: {
-    'prettier/prettier': 0,
     'react/jsx-one-expression-per-line': 0,
     'linebreak-style': 0,
     'import/no-unresolved': 0,
