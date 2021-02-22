@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-function Footer () {
+function Footer() {
   return (
     <h2> Footer</h2>
   );
