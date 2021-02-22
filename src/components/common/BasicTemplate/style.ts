@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import media from "../../../lib/util/media";
+import media from "../../../util/media";
 
 export const Container = styled.div`
   background-color: white;
