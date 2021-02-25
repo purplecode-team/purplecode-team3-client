@@ -6,5 +6,5 @@ export const Container = styled.div`
   @media (max-width: ${media.mobileL}px) {
     width: 100vw;
   }
-  width: 500px;
+  width: 650px;
 `;
