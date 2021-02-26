@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "categoryName": "영상가전"
+    },
+    {
+      "id": 2,
+      "categoryName": "주방가전"
+    },
+    {
+      "id": 3,
+      "categoryName": "생활가전"
+    },
+    {
+      "id": 4,
+      "categoryName": "노트북/PC"
+    },
+    {
+      "id": 5,
+      "categoryName": "카메라"
+    },
+    {
+      "id": 6,
+      "categoryName": "음향기기"
+    },
+    {
+      "id": 7,
+      "categoryName": "모바일/태블릿"
+    },
+    {
+      "id": 8,
+      "categoryName": "게임"
+    }
+  ]
+}
