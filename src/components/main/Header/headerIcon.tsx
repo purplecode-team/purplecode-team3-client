@@ -21,18 +21,20 @@ function HeaderIcon(): JSX.Element {
     <div>
       <S.IconContainer>
         <Link to="/alarm">
-          <BiBell color="white" />
+          <BiBell color="white"  size="22"/>
         </Link>
         <Link to="/basket">
-          <BiPurchaseTagAlt color="white" />
+          <BiPurchaseTagAlt color="white"  size="22" style={{paddingLeft: "4px"}}/>
         </Link>
         <GiHamburgerMenu
           color="white"
           onClick={onToggleMenu}
           cursor="pointer"
+          size="22"
+          style={{paddingLeft: "4px"}}
         />
       </S.IconContainer>
-      <HamburgerMenu menuOpen={menuOpen} closeMenu={closeMenu} />
+      <HamburgerMenu menuOpen={menuOpen} closeMenu={closeMenu}  />
     </div>
   );
 }
