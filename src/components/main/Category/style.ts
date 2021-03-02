@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "../../../util/media";
 
-export const CategoryWrapper = styled.div`
+export const CategoryWrapper = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@ export const CategoryWrapper = styled.div`
   }
 `;
 
-export const CategoryItem = styled.div`
+export const CategoryItem = styled.li`
   flex-direction: row;
   display: flex;
   align-items: center;
