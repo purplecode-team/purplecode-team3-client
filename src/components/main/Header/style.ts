@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export const Container = styled.div`
+export const Container = styled.header`
   background-color: black;
   height: 47px;
   width: 100%;
@@ -56,7 +56,7 @@ export const NickName = styled.div`
   padding-left: 2vw;
   font-weight: bold;
 `;
-export const OrangeButton = styled.div`
+export const MainButton = styled.button`
   background-color: #ff8a00;
   cursor: pointer;
   width: 100%;
@@ -66,25 +66,30 @@ export const OrangeButton = styled.div`
   font-size: 1.3rem;
   text-align: center;
   line-height: 64px;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 `;
 export const StyleLink = styled(Link)`
   text-decoration: none;
   color: white;
 `;
-export const MenuTextContainer = styled.div`
+export const MenuTextContainer = styled.ul`
+  list-style: none;
   padding-top: 3vh;
   display: flex;
   flex-direction: column;
 `;
-export const MenuText = styled(Link)`
-  text-decoration: none;
+export const MenuText = styled.li`
   font-size: 1.3rem;
-  color: black;
   padding: 2.5vh 0;
   font-weight: 700;
   font: Noto Sans KR;
 `;
-export const BottomButtonContainer = styled.div`
+export const MenuTextLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+export const BottomButtonContainer = styled.button`
   position: absolute;
   bottom: 50px;
   @media (max-height: 580px) {
@@ -95,6 +100,11 @@ export const BottomButtonContainer = styled.div`
   font: Noto Sans KR;
   font-size: 1rem;
   cursor: pointer;
+  border: none;
+  :focus {
+    outline: none;
+  }
+  background-color: white;
 `;
 export const SignUpButton = styled(Link)`
   text-decoration: none;
