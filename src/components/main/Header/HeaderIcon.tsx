@@ -3,7 +3,7 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiBell, BiPurchaseTagAlt } from "react-icons/bi";
-import HamburgerMenu from "./hamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu";
 import * as S from "./style";
 
 function HeaderIcon(): JSX.Element {
@@ -14,8 +14,8 @@ function HeaderIcon(): JSX.Element {
   const location = useLocation();
 
   useEffect(() => {
-    closeMenu();
-  }, [location.pathname]);
+    setMenuOpen(false)
+  }, [location.pathname, setMenuOpen]);
 
   return (
     <div>
