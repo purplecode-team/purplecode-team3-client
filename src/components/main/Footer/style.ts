@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.footer`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10,9 +10,9 @@ export const FooterWrapper = styled.div`
     height: 45px;
 `;
 
-export const FooterItem = styled.div`
+export const FooterItem = styled.p`
     border: none;
-    padding : 0.5rem;
+    padding : 0.5rem;   
     font-size: 14px;
    
 `;
