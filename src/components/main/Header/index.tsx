@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./style";
-import Logo from "./logo";
-import HeaderIcon from "./headerIcon";
+import Logo from "./Logo";
+import HeaderIcon from "./HeaderIcon"
 
 
 function Header(): JSX.Element {
