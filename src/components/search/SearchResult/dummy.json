@@ -1,0 +1,122 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "핸드폰",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-28T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "갤럭시 s9",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-27T15:12:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "아이패드 프로",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-26T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "아이패드 4세대",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-25T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "아이패드",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-25T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "갤럭시 a8",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-25T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "갤럭시 s8",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-25T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "아이폰",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-25T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "아이패드",
+      "description": "3일만 썼습니다",
+      "startDate": "2021-02-25T15:21:16.109Z",
+      "startPrice": 100000,
+      "images": [
+        {
+          "id": 1,
+          "imagePath": "https://cdn.pixabay.com/photo/2021/01/24/20/21/cloud-5946381_1280.jpg"
+        }
+      ]
+    }
+
+  ]
+}
