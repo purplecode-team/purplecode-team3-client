@@ -1,8 +1,22 @@
-import React from 'react';
+import React from "react";
+import * as S from "./style";
+import dummy from "./dummy.json";
+
+export interface CategoryProps {
+  id: number;
+  categoryName: string;
+}
 
 function Category() {
   return (
-    <h2> Category </h2>
+    <S.CategoryWrapper>
+      {dummy.data &&
+        dummy.data.map(({ id, categoryName }: CategoryProps) => (
+          <S.CategoryItem key={id}>
+            <h3>{categoryName}</h3>
+          </S.CategoryItem>
+        ))}
+    </S.CategoryWrapper>
   );
 }
 
