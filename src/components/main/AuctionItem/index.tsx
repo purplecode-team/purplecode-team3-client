@@ -28,7 +28,7 @@ const AuctionItem = ({
   return (
     <S.Wrapper>
       <S.ImageWrapper>
-        <img src={thumbnail} alt={title} width={120} height={120} />
+        <img src={thumbnail} alt={title} width={130} height={130} />
         {startDate && (
           <S.StartTimeLabel>
             {remainingDay}일 {remainingHours}시간 남음
