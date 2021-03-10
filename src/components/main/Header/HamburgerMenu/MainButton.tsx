@@ -1,5 +1,5 @@
 import React from "react";
-import dummy from "./dummyUser.json";
+import dummy from "../dummyUser.json";
 import * as S from "./style";
 
 function MainButton() {
