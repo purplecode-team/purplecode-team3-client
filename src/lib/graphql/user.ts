@@ -7,4 +7,8 @@ export interface User {
   bio: string;
 }
 
-export const CREATE_ACCOUNT = gql``;
+export const LOGIN_USER = gql`
+  mutation loginUser($email: String!, $password: String!) {
+    loginUser(email: $email, password: $password)
+  }
+`;
