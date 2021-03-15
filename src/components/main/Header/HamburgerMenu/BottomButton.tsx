@@ -14,6 +14,12 @@ function BottomButton({ closeMenu }: MenuProps) {
 
   const onLogout = useCallback(() => {
     dispatch(logoutSuccessActionCreator());
+    if (localStorage.getItem("loginUser")) {
+      window.localStorage.removeItem("loginUser");
+    }
+    if (sessionStorage.getItem("loginUser")) {
+      window.sessionStorage.removeItem("loginUser");
+    }
     closeMenu();
   }, []);
 
