@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutSuccessActionCreator } from "../../../../lib/redux/User/UserSlice";
-import dummy from "../dummyUser.json";
 import * as S from "./style";
+import { RootState } from "../../../../lib/redux/store";
 
 interface MenuProps {
   closeMenu: () => void;
@@ -10,6 +10,7 @@ interface MenuProps {
 
 function BottomButton({ closeMenu }: MenuProps) {
   const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user.token);
 
   const onLogout = useCallback(() => {
     dispatch(logoutSuccessActionCreator());
@@ -18,7 +19,7 @@ function BottomButton({ closeMenu }: MenuProps) {
 
   return (
     <S.BottomButtonContainer>
-      {dummy.user ? (
+      {user ? (
         <S.LogoutButton type="button" onClick={onLogout}>
           로그아웃
         </S.LogoutButton>
