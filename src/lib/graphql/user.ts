@@ -7,4 +7,8 @@ export interface User {
   bio: string;
 }
 
-export const CREATE_ACCOUNT = gql``;
+export const CREATE_ACCOUNT = gql`
+  mutation createAccount($email: String!, $nickname: String!, $password: String!, $bio: String){
+    createAccount(email: $email, nickname: $nickname, password: $password, bio: $bio)
+  }
+`;
