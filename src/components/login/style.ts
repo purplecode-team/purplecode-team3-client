@@ -60,3 +60,12 @@ export const LoginButton = styled.button`
     color: rgb(210, 210, 210);
   }
 `;
+export const CheckBoxLabel = styled.label`
+  padding-top: 20px;
+  color: gray;
+  cursor: pointer;
+  font-size: 1rem;
+`;
+export const CheckBox = styled.input`
+  cursor: pointer;
+`;

@@ -1,17 +1,20 @@
-import React, { useCallback } from "react";
-import { useDispatch } from "react-redux";
+import React, { useCallback, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { useMutation } from "@apollo/client";
 import useInput from "../../hooks/useInput";
 import * as S from "./style";
 import { loginSuccessActionCreator } from "../../lib/redux/User/UserSlice";
 import { LOGIN_USER } from "../../lib/graphql/user";
+import { RootState } from "../../lib/redux/store";
 
 function Login() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [email, onChangeEmail, setEmail] = useInput("");
   const [password, onChangePassword, setPassword] = useInput("");
+  const [checked, onChangeChecked] = useInput(false);
+  const user = useSelector((state: RootState) => state.user.token);
   const [loginMutation] = useMutation(LOGIN_USER, {
     variables: {
       email,
@@ -35,6 +38,23 @@ function Login() {
       console.log(error);
     }
   }, []);
+
+  useEffect(() => {
+    if (checked && user) {
+      try {
+        window.localStorage.setItem("loginUser", JSON.stringify(user));
+      } catch (e) {
+        console.log("localStorage is not working");
+      }
+    }
+    if (!checked && user) {
+      try {
+        window.sessionStorage.setItem("loginUser", JSON.stringify(user));
+      } catch (e) {
+        console.log("sessionStorage is not working");
+      }
+    }
+  }, [checked, user]);
 
   return (
     <div>
@@ -67,6 +87,14 @@ function Login() {
         <S.LoginButton type="submit" disabled={!email || !password}>
           로그인
         </S.LoginButton>
+        <S.CheckBoxLabel>
+          <S.CheckBox
+            type="checkbox"
+            checked={checked}
+            onChange={onChangeChecked}
+          />
+          로그인 상태 유지
+        </S.CheckBoxLabel>
       </S.Form>
     </div>
   );
