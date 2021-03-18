@@ -45,8 +45,6 @@ function SignUp() {
   const onSubmit = useCallback(async (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
     try {
-      console.log(email);
-      console.log(nickname);
       if (email.length !== 0 && nickname.length !== 0 && pwCheck) {
         const { data: createAccount } = await signUpMutation();
         if (createAccount) {
@@ -66,43 +64,39 @@ function SignUp() {
     <S.SignUpForm onSubmit={onSubmit}>
       <S.Title> 회원가입 </S.Title>
 
-      <S.Label>email</S.Label>
+      <S.Label>이메일</S.Label>
       <S.Input
         name="email"
         type="email"
         value={email}
         onChange={onChangeEmail}
-        placeholder="사용하실 이메일을 입력해주세요!"
+        placeholder="사용하실 이메일을 입력해주세요."
         required
       />
 
-      <S.Label>nickName</S.Label>
+      <S.Label>닉네임</S.Label>
       <S.Input
         name="nickname"
         type="text"
         value={nickname}
         onChange={onChangeNickname}
-        placeholder="사용하실 닉네임을 입력해주세요!"
+        placeholder="사용하실 닉네임을 입력해주세요."
         required
       />
 
-      <S.Label>password</S.Label>
+      <S.Label>비밀번호</S.Label>
       <S.Input
         name="password"
         type="password"
         value={password}
         onChange={onChangePassword}
-        placeholder="사용하실 비밀번호을 입력해주세요!"
+        placeholder="사용하실 비밀번호를 입력해주세요."
         required
       />
 
       <S.Label>
-        confirmPassword
-        {!pwCheck && (
-          <S.Message>
-            비밀번호가 일치하지 않습니다. 다시 입력해주세요!
-          </S.Message>
-        )}
+        비밀번호 재확인
+        {!pwCheck && <S.Message>비밀번호가 일치하지 않습니다.</S.Message>}
       </S.Label>
 
       <S.Input
@@ -110,12 +104,18 @@ function SignUp() {
         type="password"
         value={confirmPassword}
         onChange={onChangeConfirmPassword}
-        placeholder="비밀번호를 확인해주세요!"
+        placeholder="비밀번호를 다시 입력해주세요."
         required
       />
 
-      <S.Label>bio</S.Label>
-      <S.Input name="bio" type="text" value={bio} onChange={onChangeBio} />
+      <S.Label>바이오</S.Label>
+      <S.Input
+        name="bio"
+        type="text"
+        value={bio}
+        onChange={onChangeBio}
+        placeholder="사용하실 을 입력해주세요."
+      />
 
       <S.SignUpButton type="submit">회원가입</S.SignUpButton>
     </S.SignUpForm>
