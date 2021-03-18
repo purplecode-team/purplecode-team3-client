@@ -49,16 +49,15 @@ export const SignUpButton = styled.button`
   border: none;
   height: 40px;
   margin: 0.5rem 5rem 0 5rem;
-  background: #eeeeee;
+  color: #ffffff;
+  background: #faa23c;
   border-radius: 30px;
   font-weight: bold;
   font-size: 1rem;
-  color: #d2d2d2;
   text-align: center;
-  &:hover,
-  &:active {
-    color: #ffffff;
-    background: #faa23c;
+  &:disabled {
+    background: #eeeeee;
+    color: #d2d2d2;
   }
 
   @media (max-width: ${media.mobileL}px) {
