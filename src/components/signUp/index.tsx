@@ -121,14 +121,14 @@ function SignUp() {
         required
       />
 
-      <S.Label>바이오</S.Label>
+      <S.Label>소개</S.Label>
       <S.Input
         name="bio"
         type="text"
         value={bio}
         onChange={onChangeBio}
         autoComplete="off"
-        placeholder="사용하실 을 입력해주세요."
+        placeholder="프로필에 사용될 설명을 입력해주세요."
       />
 
       <S.SignUpButton type="submit" disabled={!email || !nickname || !pwCheck}>
