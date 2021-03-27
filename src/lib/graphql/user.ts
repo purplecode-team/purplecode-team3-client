@@ -5,10 +5,11 @@ export interface User {
   nickname: string;
   password: string;
   bio: string;
+  isAdmin: Boolean;
 }
 
 export const CREATE_ACCOUNT = gql`
-  mutation createAccount($email: String!, $nickname: String!, $password: String!, $bio: String){
-    createAccount(email: $email, nickname: $nickname, password: $password, bio: $bio)
+  mutation createAccount($email: String!, $nickname: String!, $phoneNum: String! $password: String!, $bio: String, $isAdmin: Boolean){
+    createAccount(email: $email, nickname: $nickname, phoneNum: $phoneNum, password: $password, bio: $bio, isAdmin: $isAdmin)
   }
 `;

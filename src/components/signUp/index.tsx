@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 import * as S from "./style";
 import { CREATE_ACCOUNT } from "../../lib/graphql/user";
 import useInput from "../../hooks/useInput";
-import {isPassword, isEmail} from "../../util/check";
+import { isPassword, isEmail } from "../../util/check";
 
 function SignUp() {
   const history = useHistory();
@@ -20,12 +20,16 @@ function SignUp() {
   const [pwCheck, setPwCheck] = useState(true);
   const [pwValidCheck, setPwValidCheck] = useState(true);
   const [emailCheck, setEmailCheck] = useState(true);
+  const [phoneNum, onChangePhoneNum, setPhoneNum] = useInput("");
+  const isAdmin = false;
   const [signUpMutation] = useMutation(CREATE_ACCOUNT, {
     variables: {
       email,
       nickname,
       password,
+      phoneNum,
       bio,
+      isAdmin,
     },
   });
 
@@ -42,6 +46,7 @@ function SignUp() {
     setNickname("");
     setPassword("");
     setConfirmPassword("");
+    setPhoneNum("");
     setBio("");
   }, [setEmail, setNickname, setPassword, setConfirmPassword, setBio]);
 
@@ -117,6 +122,18 @@ function SignUp() {
         value={confirmPassword}
         onChange={onChangeConfirmPassword}
         placeholder="비밀번호를 다시 입력해주세요."
+        autoComplete="off"
+        required
+      />
+
+      <S.Label>전화번호</S.Label>
+
+      <S.Input
+        name="phoneNum"
+        type="text"
+        value={phoneNum}
+        onChange={onChangePhoneNum}
+        placeholder="전화번호를 입력해주세요."
         autoComplete="off"
         required
       />
