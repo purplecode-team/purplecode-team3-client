@@ -7,7 +7,7 @@ export const CategoryWrapper = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   height: 340px;
-  background: #e5e5e5;
+  background: white;
   padding: 0.5rem 0;
   @media (max-width: ${media.mobileL}px) {
     height: 25vh;
@@ -23,7 +23,9 @@ export const CategoryItem = styled.li`
   height: 142px;
   border-radius: 50%;
   margin: 0 0.5rem;
-  background: #c4c4c4;
+  background: #e5e5e5;
+  text-decoration:none;
+
   h3 {
     font-weight: bold;
     font-size: 1rem;
