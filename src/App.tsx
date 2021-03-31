@@ -7,6 +7,8 @@ import { GlobalStyle } from "./components/common/GlobalStyle";
 import Main from "./pages/Main";
 import Search from "./pages/Search";
 import Login from "./pages/Login";
+import UploadProduct from "./pages/UploadProduct";
+import { loadLocalUser, loadSessionUser } from "./lib/redux/User/userSlice";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
             <Route exact path="/" component={Main} />
             <Route path="/search" component={Search} />
             <Route path="/login" component={Login} />
+            <Route path="/uploadProduct" component={UploadProduct} />
           </Switch>
         </div>
       </ApolloProvider>
