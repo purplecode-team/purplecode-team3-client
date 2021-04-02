@@ -9,8 +9,8 @@ interface StartPriceProps {
 
 function StartPrice({ startPrice, onChangeStartPrice }: StartPriceProps) {
   return (
-    <div>
-      <S.Label>판매시작가</S.Label>
+    <S.StartPriceContainer>
+      <S.StartPriceLabel>판매시작가</S.StartPriceLabel>
       <NumberFormat
         id="startPrice"
         thousandSeparator
@@ -20,15 +20,14 @@ function StartPrice({ startPrice, onChangeStartPrice }: StartPriceProps) {
         style={{
           border: "1px solid #C2C2C2",
           backgroundColor: "rgba(194, 194, 194, 0.5)",
-          width: "130px",
+          width: "51.8%",
           height: "28px",
           outline: "none",
           color: "#838383",
           fontSize: "0.8rem",
-          marginRight: "10vw",
         }}
       />
-    </div>
+    </S.StartPriceContainer>
   );
 }
 

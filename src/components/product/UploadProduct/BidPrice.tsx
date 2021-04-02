@@ -9,7 +9,7 @@ interface BidPriceProps {
 
 function BidPrice({ bidPrice, onChangeBidPrice }: BidPriceProps) {
   return (
-    <div>
+    <S.BidPriceContainer>
       <S.Label>호가</S.Label>
       <NumberFormat
         thousandSeparator
@@ -19,14 +19,14 @@ function BidPrice({ bidPrice, onChangeBidPrice }: BidPriceProps) {
         style={{
           border: "1px solid #C2C2C2",
           backgroundColor: "rgba(194, 194, 194, 0.5)",
-          width: "130px",
+          width: "65%",
           height: "28px",
           outline: "none",
           color: "#838383",
           fontSize: "0.8rem",
         }}
       />
-    </div>
+    </S.BidPriceContainer>
   );
 }
 

@@ -10,9 +10,16 @@ export const Label = styled.label`
   font-size: 1rem;
   color: #838383;
   line-height: 28px;
-  padding-right: 15px;
 `;
-
+export const StartPriceLabel = styled.label`
+  font-size: 1rem;
+  font-weight: bold;
+  color: #838383;
+  line-height: 28px;
+  @media (max-width: 376px) {
+    font-size: 0.8rem;
+  }
+`;
 export const Input = styled.input`
   border: none;
   :: placeholder {
@@ -61,8 +68,8 @@ export const PeriodNumberInput = styled.input`
 export const PriceContainer = styled.div`
   display: flex;
   margin: 17px 0 20px 0;
+  justify-content: space-between;
 `;
-export const StartDateContainer = styled.div``;
 export const TextArea = styled.textarea`
   resize: none;
   width: 100%;
@@ -102,5 +109,19 @@ export const StyledDatePicker = styled(DatePicker)`
   color: #838383;
   font-size: 0.8rem;
   height: 28px;
-  width: 130px;
+  width: 168px;
+`;
+export const StartPriceContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 54%;
+`;
+export const BidPriceContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 43%;
+`;
+export const StartDateContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
