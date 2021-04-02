@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 
 type OnChangeType = (e: React.ChangeEvent<HTMLInputElement>) => void;
 
-const useInput = (initialValue: string | boolean) => {
+const useInput = (initialValue: string | boolean | number) => {
   const [value, setValue] = useState(initialValue);
   const handler = useCallback((e) => {
     const { target } = e;

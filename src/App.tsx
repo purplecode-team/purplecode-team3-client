@@ -8,9 +8,12 @@ import Main from "./pages/Main";
 import Search from "./pages/Search";
 import Login from "./pages/Login";
 import UploadProduct from "./pages/UploadProduct";
-import { loadLocalUser, loadSessionUser } from "./lib/redux/User/userSlice";
+import { loadLocalUser, loadSessionUser } from "./lib/redux/User/UserSlice";
 
 function App() {
+  loadLocalUser();
+  loadSessionUser();
+
   return (
     <Router>
       <ApolloProvider client={client}>

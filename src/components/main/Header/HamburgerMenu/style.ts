@@ -64,7 +64,6 @@ export const MenuText = styled.li`
   font-size: 1.3rem;
   padding: 2.5vh 0;
   font-weight: 700;
-  font: Noto Sans KR;
 `;
 export const MenuTextLink = styled(Link)`
   text-decoration: none;
@@ -80,7 +79,6 @@ export const BottomButtonContainer = styled.div`
 export const LogoutButton = styled.button`
   color: #ff8a00;
   font-weight: 700;
-  font: Noto Sans KR;
   font-size: 1rem;
   cursor: pointer;
   border: none;
