@@ -23,7 +23,7 @@ function UploadProduct(): JSX.Element {
   const [bidPrice, onChangeBidPrice] = useInput(0);
   const [startDate, setStartDate] = useState<any>(new Date());
   const [stringDate, setStringDate] = useState<string | null>(null);
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState<string>("");
 
   const [uploadProductMutation] = useMutation(UPLOAD_PRODUCT, {
     variables: {
@@ -109,7 +109,6 @@ function UploadProduct(): JSX.Element {
           onChangeCategory={onChangeCategory}
         />
         <S.Line />
-
         <S.PriceContainer>
           <StartPrice
             startPrice={startPrice}
