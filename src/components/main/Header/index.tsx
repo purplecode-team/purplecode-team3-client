@@ -1,17 +1,17 @@
 import React from "react";
 import * as S from "./style";
-import Logo from "./Logo";
-import HeaderIcon from "./HeaderIcon"
-
+import Index from "./Logo";
+import HeaderIcon from "./HeaderIcon";
 
 function Header(): JSX.Element {
   return (
     <S.Container>
       <S.HeaderContents>
-        <Logo />
+        <Index />
         <HeaderIcon />
       </S.HeaderContents>
-    </S.Container>);
+    </S.Container>
+  );
 }
 
 export default Header;
