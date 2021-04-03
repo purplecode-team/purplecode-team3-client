@@ -7,8 +7,15 @@ import { GlobalStyle } from "./components/common/GlobalStyle";
 import Main from "./pages/Main";
 import Search from "./pages/Search";
 import Category from "./pages/Category";
+import SignUpPage from "./pages/SignUp";
+import Login from "./pages/Login";
+import UploadProduct from "./pages/UploadProduct";
+import { loadLocalUser, loadSessionUser } from "./lib/redux/User/UserSlice";
 
 function App() {
+  loadLocalUser();
+  loadSessionUser();
+
   return (
     <Router>
       <ApolloProvider client={client}>
@@ -18,6 +25,9 @@ function App() {
             <Route exact path="/" component={Main} />
             <Route path="/search" component={Search} />
             <Route path="/category/:category" component={Category}/>
+            <Route path="/signup" component={SignUpPage} />
+            <Route path="/login" component={Login} />
+            <Route path="/uploadProduct" component={UploadProduct} />
           </Switch>
         </div>
       </ApolloProvider>
