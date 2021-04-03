@@ -6,6 +6,7 @@ import { client } from "./lib/graphql";
 import { GlobalStyle } from "./components/common/GlobalStyle";
 import Main from "./pages/Main";
 import Search from "./pages/Search";
+import Category from "./pages/Category";
 import SignUpPage from "./pages/SignUp";
 import Login from "./pages/Login";
 import UploadProduct from "./pages/UploadProduct";
@@ -23,6 +24,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/search" component={Search} />
+            <Route path="/category/:category" component={Category}/>
             <Route path="/signup" component={SignUpPage} />
             <Route path="/login" component={Login} />
             <Route path="/uploadProduct" component={UploadProduct} />
