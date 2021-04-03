@@ -38,7 +38,7 @@ function HamburgerMenu({ menuOpen, closeMenu }: MenuProps) {
         <UserProfile />
         <MainButton />
         <MenuList />
-        <BottomButton />
+        <BottomButton closeMenu={closeMenu} />
       </S.MenuContent>
     </S.HamburgerContainer>
   );

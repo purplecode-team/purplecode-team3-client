@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  width: 130px;
   padding-right: 0.5rem;
+  padding-bottom: 1.5rem;
   h3 {
-    padding-top: 0.5rem;
+    padding-top: 1.5rem;
     font-weight: bold;
     font-size: 14px;
   }

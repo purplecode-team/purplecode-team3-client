@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0 1rem;
 `;
 
 export const Title = styled.h2`
@@ -13,8 +13,7 @@ export const Title = styled.h2`
 `;
 
 export const AuctionsContainer = styled.div`
-  padding: 1rem 0;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
+  padding: 1.5rem 0 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 `;
