@@ -6,6 +6,7 @@ import { client } from "./lib/graphql";
 import { GlobalStyle } from "./components/common/GlobalStyle";
 import Main from "./pages/Main";
 import Search from "./pages/Search";
+import SearchFilter from "./pages/SearchFilter";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/search" component={Search} />
+            <Route path="/filter" component={SearchFilter} />
           </Switch>
         </div>
       </ApolloProvider>

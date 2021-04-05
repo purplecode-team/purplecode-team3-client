@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import * as S from './style';
+import * as S from "./style";
 
-
-function Search( ) {
-  const [value, setValue] = useState('');
-  const onChange= (e:React.ChangeEvent<HTMLInputElement>) =>{
+function Search() {
+  const [value, setValue] = useState("");
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
-
 
   return (
     <S.SearchWrapper>
@@ -18,10 +16,11 @@ function Search( ) {
         value={value}
         onChange={onChange}
       />
-      <Link to={`/search?query=${value}`}><S.SearchIcon type="submit"  /></Link>
+      <Link to={`/search?query=${value}`}>
+        <S.SearchIcon type="submit" />
+      </Link>
     </S.SearchWrapper>
   );
 }
-
 
 export default Search;
