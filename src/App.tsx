@@ -10,6 +10,7 @@ import Category from "./pages/Category";
 import SignUpPage from "./pages/SignUp";
 import Login from "./pages/Login";
 import UploadProduct from "./pages/UploadProduct";
+import Product from "./pages/Product";
 import { loadLocalUser, loadSessionUser } from "./lib/redux/User/UserSlice";
 
 function App() {
@@ -24,10 +25,12 @@ function App() {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/search" component={Search} />
-            <Route path="/category/:category" component={Category}/>
+            <Route path="/category/:id" component={Category}/>
             <Route path="/signup" component={SignUpPage} />
             <Route path="/login" component={Login} />
             <Route path="/uploadProduct" component={UploadProduct} />
+            <Route path="/product/:category/:id" component={Product} />
+
           </Switch>
         </div>
       </ApolloProvider>

@@ -17,9 +17,12 @@ const AuctionItem = ({
   startDate,
   thumbnail,
 }: AuctionItemProps) => {
-  const now = moment(new Date());
+
+
+  const now = moment(new Date(),"YYYY-MM-DD hh:mm:ss");
+  const startdate = moment(startDate, "YYYY-MM-DD hh:mm:ss");
   const duration = startDate
-    ? moment.duration(moment(startDate).diff(now))
+    ? moment.duration(moment(startdate).diff(now))
     : "";
 
   const remainingDay = duration && duration.days();

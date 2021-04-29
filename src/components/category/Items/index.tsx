@@ -1,7 +1,12 @@
-import React, {useState} from "react";
-import dummy from "./dummy.json";
-import * as S from "./style";
+import React, {  useState } from "react";
+import { useQuery, useLazyQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 import ProductItem from "../ProductItem/index";
+import { GET_SORTEDPRODUCTS } from "../../../lib/graphql/product";
+import * as S from "./style";
+import { GET_CATEGORIES } from "../../../lib/graphql/category";
+import { CategoryProps } from "../../main/Category";
+
 
 export interface Image {
   id: number;
@@ -15,68 +20,100 @@ export interface Product {
   startPrice: number;
   startDate: string;
   images: Image[];
+  idCategory: number;
 }
 
-function CategoryItems  ( ) {
+function CategoryItems  ( {match}:any ) {
 
-  const d = dummy.data;
-  const [state, setState] =  useState({
-    choice: "0",
-    data:d
-  });
-  /* 빠른 시작순으로 데이터 받아옴 */
+    const cate = useQuery(GET_CATEGORIES);
+    const cat :number = +match.params.id;
 
-  const sortByLowPrices = d.map(a=>a).sort((a,b)=>a.startPrice-b.startPrice);
-  const sortByHighPrices =d.map(a=>a).sort((a,b)=>b.startPrice-a.startPrice);
-  ;
+    const pro = useQuery(GET_SORTEDPRODUCTS,{
+    variables : {action: 'NEW'}});
 
-  const obj:{[index:string]:any} = {
-    "0" : d ,
-    "1" : sortByLowPrices,
-    "2" : sortByHighPrices
-  };
+    const a = pro.data.sortProduct;
 
+    // const [category, setCate] = useState(cat);
+
+    const [state, setState] =  useState({
+      choice: 'NEW',
+      category : cat,
+      products: a.filter((aa:Product)=>(aa.idCategory === cat)),
+    });
+
+  const [ onSort ] = useLazyQuery(GET_SORTEDPRODUCTS,{
+    variables : {action: state.choice},
+    onCompleted: (newData) =>{
+      setState({...state, products: newData.sortProduct});
+    }});
+
+
+  /* sort 변경 event */
   const onChange= (e:React.ChangeEvent<HTMLSelectElement>) =>{
-    setState({
-      choice:e.target.value,
-      data:obj[e.target.value]
-  });
+    setState({...state,
+      choice:e.target.value });
+    onSort();
   };
+
+
 
   return (
-  <S.Container>
-    <S.Title>
-      총 {state.data.length}개
-    </S.Title>
-    <S.DropDown value={state.choice} onChange = {onChange}>
-      <option value="0" selected>빠른 시작 순</option>
-      <option value="1">낮은 가격 순</option>
-      <option value="2">높은 가격 순</option>
-    </S.DropDown>
-    <S.ItemsContainer>
-       {state.data &&
-       state.data.map(
-         ({
-            id,
-            title,
-            description,
-            startPrice,
-            startDate,
-            images,
-          }: Product) => (
-           <ProductItem
-             key={id}
-             title={title}
-             description={description}
-             startPrice={startPrice}
-             startDate={startDate}
-             thumbnail={images[0].imagePath}
-           />
-         ))}
-    </S.ItemsContainer>
+    <S.Container>
+      <S.CategoryHeader>
+          {cate.data.seeCategory.map(({ id, categoryName }: CategoryProps) => (
+            id===cat ? <h3>{categoryName}</h3> :null))}
+          {cate.data &&
+          cate.data.seeCategory.map(({ id, categoryName }: CategoryProps) => (
+            <S.Category key={id}>
+              { id === cat ?
+                <h3>{categoryName}</h3>:
+                <Link to={`/category/${id}`}
+                      onClick={()=>setState(
+                        {...state,
+                          category:id,
+                          products: a.filter((aaa:Product)=>(aaa.idCategory === id))}
+
+                      )} style={{ color: 'inherit', textDecoration: 'inherit'} }
+                ><h2>{categoryName}</h2></Link>}
+            </S.Category>
+          ))}
+        </S.CategoryHeader>
+
+      <S.Title>
+        총 {state.products.length}개
+      </S.Title>
+      <S.DropDown value={state.choice} onChange = {onChange}>
+        <option value='NEW'>신상품 순</option>
+        <option value='FAST' selected>빠른 시작 순</option>
+        <option value='HOT'>인기 순</option>
+        <option value='LOWPRICE'>낮은 가격 순</option>
+        <option value='HIGHPRICE'>높은 가격 순</option>
+      </S.DropDown>
+      <S.ItemsContainer>
+         {state.products &&
+         state.products.map(
+           ({
+              id,
+              title,
+              description,
+              startPrice,
+              startDate,
+              idCategory
+            }: Product) => (
+             <ProductItem
+               key={id}
+               id = {id}
+               title={title}
+               description={description}
+               startPrice={startPrice}
+               startDate={startDate}
+               idCategory={idCategory}
+               thumbnail="http://the-edit.co.kr/wp-content/uploads/2019/05/ipadmini5-14-1024x682.jpg"
+             />
+           ))}
+      </S.ItemsContainer>
   </S.Container>
-)
+);
 }
-;
 
 export default CategoryItems;
