@@ -8,7 +8,7 @@ export const MenuCategory = [
     text:"실시간 경매"
   },
   {
-    link:"/category",
+    link:"/category/3",
     text:"상품 카테고리"
   },
   {
