@@ -4,15 +4,23 @@ import media from "../../../util/media";
 
 export const ContainerOutSide = styled.div`
   padding: 0;
-  width:100%;
+  width:650px;
   position:fixed;
-
+  
+ @media (max-width: ${media.mobileL}px) {
+      width:100%;
+  }
 `
 export const Container = styled.div`
   padding-top:5px;
-  width:95%;
+  width:630px;
   background: white;
   margin:auto;
+  
+  @media (max-width: ${media.mobileL}px) {
+ width:100%;
+  }
+
 `;
 
 export const Title = styled.div`
@@ -43,23 +51,41 @@ export const Info = styled.div`
     display:block;
     line-height:40px;
     }
-  h2{
+ 
+  
+  h3{
+      font-size:14px;
+  }
+  @media (max-width: ${media.mobileL}px) {
+  
+   h2{
   display:inline;
   float:left;
   width:60vw;     
   line-height:30px; 
   }
-  
-  h3{
-      font-size:14px;
-  }
-  
   h4{
     display:inline;
     float:left;
     width:60vw;     
     line-height:30px; 
   }
+  }
+  
+   
+   h2{
+  display:inline;
+  float:left;
+  width:450px;     
+  line-height:30px; 
+  }
+  h4{
+    display:inline;
+    float:left;
+    width:450px;     
+    line-height:30px; 
+  }
+  
   h5{
     display:inline;
     text-align: right;
@@ -91,10 +117,14 @@ font-size:14px;
 
 export const BottomBar = styled.div`
 position:fixed;
-width:100%;
+width:650px;
 height:65px;
 background-color: #383A3F;
 bottom:0;
+
+@media (max-width: ${media.mobileL}px) {
+      width:100%;
+  }
 `
 
 

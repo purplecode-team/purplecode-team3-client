@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {useQuery} from "@apollo/client";
 import { GET_CATEGORIES } from "../../../lib/graphql/category"
@@ -10,12 +10,18 @@ export interface CategoryProps {
 }
 
 function Category() {
-  const { error, data } = useQuery(GET_CATEGORIES);
-  if (error) console.log(error);
+    const a:CategoryProps[] =[{id:0,categoryName:''}];
+
+  const [cat, setCat] = useState(a);
+
+    useQuery(GET_CATEGORIES,{onCompleted:(data)=>
+        setCat(data.seeCategory)
+    });
+
   return (
     <S.CategoryWrapper>
-      {data.seeCategory &&
-        data.seeCategory.map(({ id, categoryName }: CategoryProps) => (
+      {cat &&
+        cat.map(({ id, categoryName }: CategoryProps) => (
           <Link to={`/category/${id}`} style={{ color: 'inherit', textDecoration: 'inherit'}} >
             <S.CategoryItem key={id}>
                <h3>{categoryName}</h3>
