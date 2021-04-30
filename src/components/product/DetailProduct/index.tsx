@@ -115,20 +115,5 @@ function DetailProduct ( {match}: any ) {
 )
 };
 
-/*
-
-<S.Category key={id}>
-            { id === cat ?
-              <h3>{categoryName}</h3>:
-              <Link to={`/category/${id}`}
-                    onClick={()=>setState(
-                      {...state,
-                        category:id,
-                        products: a.filter((aaa:Product)=>(aaa.idCategory === id))}
-
-                    )} style={{ color: 'inherit', textDecoration: 'inherit'} }
-              ><h2>{categoryName}</h2></Link>}
-          </S.Category>
- */
 
 export default DetailProduct;

@@ -56,21 +56,6 @@ export const Info = styled.div`
   h3{
       font-size:14px;
   }
-  @media (max-width: ${media.mobileL}px) {
-  
-   h2{
-  display:inline;
-  float:left;
-  width:60vw;     
-  line-height:30px; 
-  }
-  h4{
-    display:inline;
-    float:left;
-    width:60vw;     
-    line-height:30px; 
-  }
-  }
   
    
    h2{
@@ -100,6 +85,42 @@ export const Info = styled.div`
     margin-right:20px;
     line-height:30px; 
   }
+  
+  
+  @media (max-width: ${media.mobileL}px) {
+  
+   h2{
+  display:inline;
+  float:left;
+  width:60vw;     
+  line-height:30px; 
+  }
+  h4{
+    display:inline;
+    float:left;
+    width:60vw;     
+    line-height:30px; 
+  }
+  
+  
+  h5{
+    display:inline;
+    text-align: right;
+    float:right;
+    margin-right:20px;
+    line-height:30px; 
+  }
+  span{
+    display:inline;
+    text-align: right;
+    float:right;
+    margin-right:20px;
+    line-height:30px; 
+  }
+  
+  
+  
+  }
 
 `
 
@@ -109,7 +130,7 @@ font-size:14px;
  width:90%;
   padding-top:15px;
   padding-left: 20px;
-  padding-bottom:15px;
+  padding-bottom:50px;
   line-height:20px;
   border-bottom:1px solid #e5e5e5;
 
@@ -121,6 +142,7 @@ width:650px;
 height:65px;
 background-color: #383A3F;
 bottom:0;
+
 
 @media (max-width: ${media.mobileL}px) {
       width:100%;
