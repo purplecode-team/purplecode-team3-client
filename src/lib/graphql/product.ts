@@ -43,11 +43,18 @@ export const GET_SORTEDPRODUCTS = gql`
 export const GET_PRODUCT = gql`
     query Product($id: Int!) {
         seeDetailProduct(id: $id){
+            id
             title
             description
             startPrice
             bidPrice
-            
+            productNum
+            startDate
+            usedDate
+            idCategory
+            user{
+                nickname
+            }
         }
     }
 `;

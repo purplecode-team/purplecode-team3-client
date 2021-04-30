@@ -10,8 +10,7 @@ export interface CategoryProps {
 }
 
 function Category() {
-  const { loading, error, data } = useQuery(GET_CATEGORIES);
-  if (loading) return <p>loading</p>
+  const { error, data } = useQuery(GET_CATEGORIES);
   if (error) console.log(error);
   return (
     <S.CategoryWrapper>
