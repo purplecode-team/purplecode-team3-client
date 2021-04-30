@@ -23,9 +23,9 @@ function ProductItem ({
   id
 }: ProductItemProps) {
   const now = moment(new Date());
-  const duration = startDate
-    ? moment.duration(moment(startDate).diff(now))
-    : "";
+  const start = startDate? new Date(+startDate):"";
+
+  const duration = moment.duration(moment(start).diff(now));
 
   const remainingDay = duration && duration.days();
   const remainingHours = duration && duration.hours();
