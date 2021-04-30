@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 2rem 0.7rem 0rem 0.7rem;
+  padding: 0rem 0.7rem 0rem 0.7rem;
 `;
 
 export const Title = styled.div`
@@ -40,5 +40,43 @@ export const DropDown = styled.select`
   
  
  `;
+
+export const CategoryHeader = styled.div`
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  line-height:50px;
+  background: white;
+  h3 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+`;
+
+export const Category = styled.ul`
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:white;
+  width: 12.5%;
+  height: 25px;
+  line-height:25px;
+  text-decoration:none;
+  border-bottom:1px solid #e5e5e5;
+  margin-bottom:10px;
+  h3 {
+    font-weight:bold;
+    font-size: 0.7rem;
+    border-bottom: 3.5px solid black;
+
+  }
+  
+  h2 {
+      font-size: 0.5rem;
+  }
+  
+  
+`;
 
 
